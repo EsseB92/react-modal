@@ -1,38 +1,126 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    font-size: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-weight: 400;
+    font-family: 'Lato', 'Helvetica Neue', arial, sans-serif;
+    line-height: 1.666;
+    -webkit-font-smoothing: antialiased;
+    color: #5e6c76;
+    margin: 0;
+    padding: 10px 0 0 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.band {
+    background-image: linear-gradient(
+        to right,
+        #2a27a8 0%,
+        #8c50bc 50%,
+        #fc6e6c 100%
+    );
+    height: 10px;
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper {
+    padding: 2em 20px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+small {
+    color: #aaa;
+}
+h1,
+h2,
+h3,
+h4 {
+    color: #404a50;
+    font-weight: 800;
+    font-size: 1.75em;
+    line-height: 1.1;
+    margin: 0 0 1.5rem 0;
+}
+h2 button {
+    color: #cad1d5;
+    border: none;
+}
+h2 button:hover {
+    color: #fa0065;
+}
+button {
+    color: #fa0065;
+    font-weight: 700;
+    transition-duration: 0.2s;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+button:hover {
+    color: #22272a;
+    border-color: #22272a;
+}
+p,
+ul,
+ol,
+pre {
+    margin: 0 auto 1.5rem auto;
+}
+p code,
+li code {
+    color: #000080;
+    font-size: 0.9em;
+}
+pre {
+    font-size: 14px;
+    line-height: 2;
+}
+pre code {
+    overflow: scroll;
+    padding: 1em;
+    border-radius: 4px;
+    background: #f9fafb;
+    color: #475359;
+}
+hr {
+    height: 3px;
+    background: #f0f2f3;
+    border: none;
+    margin: 3rem 0;
+    border-radius: 3px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid #eee;
+    padding: 15px;
+}
+td pre {
+    margin: 0;
+}
+code {
+    font-family: 'fira mono', monospace;
+}
+button.openModalBtn {
+    color: #fff;
+    background: #ff0066;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border-radius: 4px;
+    transition-duration: 0.25s;
+    border: none;
+    font-size: 14px;
+}
+button.openModalBtn:hover {
+    background: #22272a;
 }
