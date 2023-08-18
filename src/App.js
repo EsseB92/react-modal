@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Modal } from './lib/Modal';
+import XMark from './assets/svgs/solid/circle-xmark.svg';
+import Exclamation from './assets/svgs/solid/exclamation.svg';
 import './App.css';
 
 function App() {
@@ -10,18 +12,18 @@ function App() {
     });
     var modalContent = (
         <p>
-            Thanks for clicking. That felt good.
+            Vous êtes désormais connecté. Il vous reste une dernière étape.
             <br />
-            Click{' '}
+            Cliquez{' '}
             <a
                 href=''
                 onClick={() => {
                     setOpenModal(false);
                 }}
             >
-                close
-            </a>
-            , click the overlay, or press ESC
+                Ici
+            </a>{' '}
+            pour accéder au site ou quittez cette page
         </p>
     );
 
@@ -66,17 +68,58 @@ function App() {
                     </button>
 
                     {openModal && (
+                        // <Modal
+                        //     // Global Part
+                        //     closeModal={setOpenModal}
+                        //     maxWidth='500px'
+                        //     closingBtn={XMark}
+                        //     borderRadius='25px'
+                        //     // height='200px'
+                        //     // Header Part
+                        //     modalHeader={'Vous êtes connecté'}
+                        //     colorHeader='white'
+                        //     bgColorHeader='-webkit-gradient(linear, left bottom, left top, color-stop(0, #1e3d47),color-stop(1, #2e5764))'
+                        //     textAlignHeader='center'
+                        //     fontSizeHeader='20px'
+                        //     // Body Part
+                        //     modalBody={modalContent}
+                        //     colorBody='white'
+                        //     bgColorBody='grey'
+                        //     textAlignBody='left'
+                        //     fontSizeBody='14px'
+                        //     modalFooter={'Footer'}
+                        // ></Modal>
+
                         <Modal
+                            // Global Part
                             closeModal={setOpenModal}
-                            // modalHeader={'Header'}
-                            colorHeader='white'
-                            bgColorHeader='-webkit-gradient(linear, left bottom, left top, color-stop(0, #1e3d47),color-stop(1, #2e5764))'
-                            textAlignHeader='left'
-                            fontSizeHeader='14px'
-                            modalBody={modalContent}
-                            // modalFooter={'Footer'}
-                            width='500px'
-                            height='200px'
+                            maxWidth='500px'
+                            closingBtn={XMark}
+                            borderRadius='8px'
+                            // height='200px'
+                            // Header Part
+                            //modalHeader={'Vous êtes connecté'}
+                            //colorHeader='white'
+                            //bgColorHeader='-webkit-gradient(linear, left bottom, left top, color-stop(0, #1e3d47),color-stop(1, #2e5764))'
+                            //textAlignHeader='center'
+                            //fontSizeHeader='20px'
+                            // Body Part
+                            modalBody={
+                                <p>
+                                    Thanks for clicking. That felt good. <br />
+                                    Click{' '}
+                                    <a href='#' rel='modal:close'>
+                                        close
+                                    </a>
+                                    , click the overlay, or press ESC
+                                </p>
+                            }
+                            colorBody='#5e6c76'
+                            bgColorBody='white'
+                            textAlignBody='left'
+                            fontSizeBody='14px'
+                            // Footer Part
+                            modalFooter={'Footer'}
                         ></Modal>
                     )}
 
