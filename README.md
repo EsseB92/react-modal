@@ -1,70 +1,132 @@
-# Getting Started with Create React App
+# React Modal Component
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A reusable React modal component with customizable styles.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Props](#props)
+- [Examples](#examples)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To use this component in your React project, you can install it via npm or yarn:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```bash
+npm install @esseb92/react-modal
+# or
+yarn add @esseb92/react-modal
+```
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Import the Modal component into your React application:
 
-### `npm run build`
+```javascript
+import Modal from "@esseb92/react-modal";
+import "@esseb92/react-modal/Modal.css";
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Then, you can use the Modal component in your application:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```javascript
+<Modal
+  closeModal: setOpenModal,
+  maxWidth: "500px"
+  // Other props for customization
+/>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Props
 
-### `npm run eject`
+The Modal component accepts the following props:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Global Part
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `closeModal`: A function to close the modal.
+- `maxWidth`: Maximum width of the modal.
+- `closingBtn`: A URL for a closing button image.
+- `borderRadius`: Border radius of the modal.
+- `padding`: Padding of the modal.
+- `margin`: Margin of the modal.
+- `fontFamily`: Font family for the modal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Header Part
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `modalHeader`: Header text for the modal.
+- `colorHeader`: Text color for the header.
+- `bgColorHeader`: Background color for the header.
+- `textAlignHeader`: Text alignment for the header.
+- `fontSizeHeader`: Font size for the header.
+- `paddingHeader`: Padding for the header.
+- `marginHeader`: Margin for the header.
 
-## Learn More
+### Body Part
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `modalBody`: Content for the modal body.
+- `colorBody`: Text color for the body.
+- `bgColorBody`: Background color for the body.
+- `textAlignBody`: Text alignment for the body.
+- `fontSizeBody`: Font size for the body.
+- `paddingBody`: Padding for the body.
+- `marginBody`: Margin for the body.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Footer Part
 
-### Code Splitting
+- `modalFooter`: Content for the modal footer.
+- `colorFooter`: Text color for the footer.
+- `bgColorFooter`: Background color for the footer.
+- `textAlignFooter`: Text alignment for the footer.
+- `fontSizeFooter`: Font size for the footer.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Examples
 
-### Analyzing the Bundle Size
+Here's an example of how to use the Modal component:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```javascript
+import Modal from "@esseb92/react-modal";
+import "@esseb92/react-modal/Modal.css";
+```
 
-### Making a Progressive Web App
+```javascript
+const [openModal, setOpenModal] = useState(false);
+const contentBody = (
+  <p>
+    Thanks for clicking. That felt good. <br />
+    Click <a
+      href="#"
+      onClick={() => {
+        setOpenModal(false);
+      }}
+      className="clickable"
+    >
+      close
+    </a>, click the overlay, or press ESC
+  </p>
+);
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```javascript
+{openModal && (
+  <Modal
+    // Global Part
+    closeModal: setOpenModal,
+    maxWidth: "500px",
+    closingBtn: XMarkIcon,
+    borderRadius: "8px",
+    padding: "15px 30px",
+    fontFamily: '"Lato", "Helvetica Neue", arial, sans-serif',
+    // Body Part
+    modalBody: contentBody,
+    colorBody: "#5e6c76",
+    bgColorBody: "white",
+    textAlignBody: "left",
+    fontSizeBody: "18px",
+    paddingBody: "0",
+  />
+)
+}
+```
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Alt text](image.png)
