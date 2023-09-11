@@ -1,3 +1,4 @@
 node_modules/
-src/test
+src/tests
 public/
+image.png
