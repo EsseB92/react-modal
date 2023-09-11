@@ -49,6 +49,7 @@ export const Modal = ({
     fontSize: fontSizeHeader,
     padding: paddingHeader,
     margin: marginHeader,
+    borderRadius: "inherit",
   };
 
   const modalBodyStyle = {
@@ -58,6 +59,7 @@ export const Modal = ({
     fontSize: fontSizeBody,
     margin: marginBody,
     padding: paddingBody,
+    borderRadius: "inherit",
   };
 
   const modalFooterStyle = {
@@ -67,6 +69,7 @@ export const Modal = ({
     fontSize: fontSizeFooter,
     // margin: '1em 0',
     padding: "1rem",
+    borderRadius: "inherit",
   };
 
   return (
